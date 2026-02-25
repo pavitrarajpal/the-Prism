@@ -17,7 +17,7 @@ const products = [
         id: 2,
         name: "Ceremonial Matcha No.01",
         price: "$45.00",
-        image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=600&auto=format&fit=crop"
+        image: "/hero-matcha.png"
     },
     {
         id: 3,

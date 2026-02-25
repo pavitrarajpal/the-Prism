@@ -70,7 +70,7 @@ const Hero = () => {
             <div className={styles.heroContent}>
                 <div className={styles.productWrapper} ref={productRef}>
                     <img
-                        src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=1200&auto=format&fit=crop"
+                        src="/hero-matcha.png"
                         alt="Ceremonial Matcha"
                         className={styles.productImage}
                     />
