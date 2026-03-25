@@ -39,7 +39,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: var(--color-matcha);
+    color: var(--color-sakura);
     /* The mask will be animated from 100% (hidden) to 0% (revealed) from bottom up */
     clip-path: inset(100% 0 0 0);
     z-index: 3;

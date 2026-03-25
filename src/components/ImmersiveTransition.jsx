@@ -41,9 +41,9 @@ const ImmersiveTransition = () => {
         <section className={styles.section} ref={containerRef}>
             <div className={styles.background} ref={bgRef}></div>
             <div className={styles.textContainer}>
-                MATCHA
+                SAKURA
                 <div className={styles.maskedText} ref={maskRef}>
-                    MATCHA
+                    SAKURA
                 </div>
             </div>
         </section>

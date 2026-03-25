@@ -23,7 +23,7 @@
     font-family: var(--font-serif);
     font-size: clamp(3rem, 6vw, 5rem);
     line-height: 1.1;
-    color: var(--color-matcha);
+    color: var(--color-sakura);
     /* The vertical clip-path text reveal target */
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }

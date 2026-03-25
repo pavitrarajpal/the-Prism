@@ -50,13 +50,13 @@ const ProductShowcase = () => {
                 <div className={styles.imageWrapper}>
                     <img
                         src="https://images.unsplash.com/photo-1582787019842-8c116bb867ff?q=80&w=800&auto=format&fit=crop"
-                        alt="Ceremonial Matcha No.01"
+                        alt="Premium Sakura Latte"
                         className={styles.productImage}
                     />
                 </div>
 
                 <div className={styles.details}>
-                    <h3 className={styles.title}>Ceremonial Matcha No.01</h3>
+                    <h3 className={styles.title}>Premium Sakura Latte</h3>
                     <p className={styles.price}>$45.00</p>
 
                     <div className={styles.controls}>

@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root {
-  --color-matcha: #6A8F6B;
-  --color-cream: #F5F1E8;
-  --color-beige: #E8E2D2;
-  --color-brown: #5C4B41;
-  --color-dark-brown: #3E3028;
+  --color-sakura: #E5A4B4;
+  --color-matcha: #4A6352;
+  --color-matcha-light: #8CA293;
+  --color-cream: #F7F9F5;
+  --color-beige: #EBEFE9;
+  --color-brown: #334238;
+  --color-dark-brown: #1B261E;
   --color-white: #FFFFFF;
-  --color-black: #1A1A1A;
+  --color-black: #111813;
 
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Inter', sans-serif;

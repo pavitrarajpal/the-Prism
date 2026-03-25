@@ -6,9 +6,9 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.topSection}>
                 <div className={styles.brand}>
-                    <h2 className={styles.logo}>MATCHA.</h2>
+                    <h2 className={styles.logo}>SAKURA.</h2>
                     <p className={styles.mission}>
-                        Sourced ethically from Uji, Japan.<br />
+                        Sourced ethically from Japan.<br />
                         Bringing mindfulness to your daily ritual.
                     </p>
                 </div>
@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className={styles.linkGroup}>
                         <h4 className={styles.linkTitle}>Shop</h4>
                         <a className={styles.link}>All Products</a>
-                        <a className={styles.link}>Ceremonial Matcha</a>
+                        <a className={styles.link}>Premium Sakura Latte</a>
                         <a className={styles.link}>Accessories</a>
                     </div>
 
@@ -38,7 +38,7 @@ const Footer = () => {
             </div>
 
             <div className={styles.bottomSection}>
-                <p>&copy; {new Date().getFullYear()} Matcha Co. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Sakura Co. All rights reserved.</p>
                 <p>Designed with intentionality.</p>
             </div>
         </footer>

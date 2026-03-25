@@ -70,8 +70,8 @@ const Hero = () => {
             <div className={styles.heroContent}>
                 <div className={styles.productWrapper} ref={productRef}>
                     <img
-                        src="/hero-matcha.png"
-                        alt="Ceremonial Matcha"
+                        src="/hero-sakura.png"
+                        alt="Premium Sakura Latte"
                         className={styles.productImage}
                     />
                 </div>
@@ -83,9 +83,9 @@ const Hero = () => {
                         </span>
                     </h1>
                     <p className={styles.subtext}>
-                        Ceremonial-grade matcha for slow mornings.
+                        Premium, soft-pink sakura lattes for slow mornings.
                     </p>
-                    <button className={styles.cta}>Shop Matcha</button>
+                    <button className={styles.cta}>Shop Sakura</button>
                 </div>
             </div>
         </section>

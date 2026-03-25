@@ -48,23 +48,23 @@ const MaskSection = () => {
                 </div>
                 <div className={styles.paragraphWrapper}>
                     <p className={styles.paragraph}>
-                        Cultivated in the shaded hills of Uji, Kyoto.
-                        Our leaves are hand-picked at peak freshness to preserve
-                        the vibrant green color and delicate umami flavor.
+                        Cultivated in the serene gardens of Japan.
+                        Our blossoms are carefully selected at peak freshness to preserve
+                        the vibrant pink color and delicate floral flavor.
                     </p>
                 </div>
                 <div className={styles.paragraphWrapper}>
                     <p className={styles.paragraph}>
-                        A daily ritual that calms the mind and energizes the body.
-                        Experience the purest form of whole-leaf green tea.
+                        A daily ritual that calms the mind and delights the senses.
+                        Experience the purest form of spring in a cup.
                     </p>
                 </div>
             </div>
 
             <div className={styles.rightCol}>
                 <img
-                    src="/hero-matcha.png"
-                    alt="Matcha Preparation"
+                    src="/hero-sakura.png"
+                    alt="Sakura Preparation"
                     className={styles.image}
                 />
             </div>
