@@ -1,0 +1,472 @@
+/* ============================================================
+   Shopping Cart — "Your Ritual Vessels"
+   The Ceremonial Canvas Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap');
+
+:root {
+    --surface: #f9faf8;
+    --surface-container: #edeeec;
+    --surface-container-low: #f3f4f2;
+    --surface-container-high: #e7e8e6;
+    --primary: #7f525d;
+    --primary-container: #ebb2bf;
+    --primary-fixed: #ffd9e0;
+    --on-surface: #191c1b;
+    --on-surface-variant: #504446;
+    --outline-variant: #d4c2c5;
+    --secondary: #596058;
+}
+
+/* ── Page shell ── */
+.page {
+    min-height: 100vh;
+    background-color: var(--surface);
+    font-family: 'Manrope', sans-serif;
+    color: var(--on-surface);
+}
+
+/* ── Top bar ── */
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(249, 250, 248, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(212, 194, 197, 0.15);
+}
+
+.topBarLabel {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--on-surface);
+}
+
+.topNav {
+    display: flex;
+    gap: 2rem;
+}
+
+.topNavLink {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.topNavLink:hover {
+    color: var(--primary);
+}
+
+/* ── Content ── */
+.contentWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+}
+
+/* ── Page heading ── */
+.pageHeading {
+    margin-bottom: 3.5rem;
+}
+
+.pageTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: var(--on-surface);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.01em;
+}
+
+.pageSubtitle {
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin: 0;
+}
+
+/* ── Two-column layout ── */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+/* ── Cart item ── */
+.cartList {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.cartItem {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--surface-container-low);
+    border-radius: 12px;
+    transition: background-color 0.25s ease;
+}
+
+.cartItem:hover {
+    background-color: var(--surface-container);
+}
+
+.itemImageWrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--surface-container);
+    flex-shrink: 0;
+}
+
+.itemImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.itemName {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--on-surface);
+    margin: 0;
+}
+
+.itemMeta {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--on-surface-variant);
+    margin: 0;
+    letter-spacing: 0.04em;
+}
+
+.itemControls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.qtyRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--surface-container-high);
+    border-radius: 100px;
+    padding: 0.3rem 0.6rem;
+}
+
+.qtyBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--on-surface-variant);
+    padding: 0.1rem 0.25rem;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.qtyBtn:hover {
+    color: var(--primary);
+}
+
+.qtyValue {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--on-surface);
+    min-width: 1.2rem;
+    text-align: center;
+}
+
+.removeBtn {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--on-surface-variant);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.removeBtn:hover {
+    color: var(--primary);
+}
+
+.itemPrice {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--on-surface);
+    white-space: nowrap;
+}
+
+/* ── Editorial pull-quote ── */
+.pullQuote {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--on-surface-variant);
+    border-left: 2px solid var(--primary-container);
+    padding: 0.5rem 1.5rem;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* ── Order Summary Panel ── */
+.summaryPanel {
+    background-color: var(--surface-container-low);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: sticky;
+    top: 90px;
+}
+
+.summaryTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--on-surface);
+    margin: 0 0 0.5rem 0;
+}
+
+.summaryRows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--on-surface-variant);
+}
+
+.muted {
+    font-style: italic;
+    font-size: 0.78rem;
+}
+
+.summaryTotal {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 194, 197, 0.4);
+    font-family: 'Noto Serif', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--primary);
+}
+
+/* ── Checkout CTA ── */
+.checkoutBtn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+    color: var(--primary-fixed);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: opacity 0.25s ease, transform 0.2s ease;
+}
+
+.checkoutBtn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+/* ── Perk list ── */
+.perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.perk {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+    color: var(--on-surface-variant);
+    letter-spacing: 0.02em;
+}
+
+.perkIcon {
+    color: var(--primary-container);
+    font-size: 0.65rem;
+    flex-shrink: 0;
+}
+
+/* ── Upsell ── */
+.completeSet {
+    border-top: 1px solid rgba(212, 194, 197, 0.4);
+    padding-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.completeSetLabel {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin: 0;
+}
+
+.upsellCard {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background-color: var(--surface-container);
+    border-radius: 10px;
+    padding: 0.75rem;
+}
+
+.upsellImage {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.upsellName {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--on-surface);
+    margin: 0 0 0.35rem 0;
+}
+
+.upsellBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--primary);
+    padding: 0;
+    letter-spacing: 0.04em;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.upsellBtn:hover {
+    opacity: 0.7;
+}
+
+/* ── Footer ── */
+.footer {
+    background-color: var(--surface-container);
+    padding: 2rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.footerBrand {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--on-surface);
+}
+
+.footerNav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footerLink {
+    font-size: 0.72rem;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+    color: var(--primary);
+}
+
+.footerCopy {
+    font-size: 0.68rem;
+    color: var(--on-surface-variant);
+    margin: 0;
+    font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .summaryPanel {
+        position: static;
+    }
+
+    .cartItem {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .itemControls,
+    .itemPrice {
+        grid-column: 2;
+    }
+
+    .topBar {
+        padding: 1rem 1.5rem;
+    }
+
+    .contentWrapper {
+        padding: 2.5rem 1.5rem;
+    }
+}

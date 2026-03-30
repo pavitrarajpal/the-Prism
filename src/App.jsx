@@ -5,42 +5,23 @@ import { ReactLenis, useLenis } from 'lenis/react';
 
 import Hero from './components/Hero';
 import MaskSection from './components/MaskSection';
+import ScrollSequence from './components/ScrollSequence';
 import ProductShowcase from './components/ProductShowcase';
 import ImmersiveTransition from './components/ImmersiveTransition';
 import ShopGrid from './components/ShopGrid';
 import Footer from './components/Footer';
 import Login from './components/Login';
+import ProductPage from './components/ProductPage';
+import Navbar from './components/Navbar';
+import AboutUs from './components/AboutUs';
+import Contact from './components/Contact';
+import Cart from './components/Cart';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Header() {
-  const navigate = useNavigate();
-  const { currentUser, logout } = useAuth();
 
-  const handleAuthAction = async () => {
-    if (currentUser) {
-      try {
-        await logout();
-        navigate('/');
-      } catch (error) {
-        console.error("Failed to log out", error);
-      }
-    } else {
-      navigate('/login');
-    }
-  };
-
-  return (
-    <header className="fixed-header">
-      <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>MATCHA.</div>
-      <button className="cart-btn" onClick={handleAuthAction}>
-        {currentUser ? 'Log Out' : 'Login / Cart (0)'}
-      </button>
-    </header>
-  );
-}
 
 function App() {
   const lenis = useLenis(({ scroll }) => {
@@ -57,64 +38,30 @@ function App() {
       <AuthProvider>
         <ReactLenis root>
           <div className="app-container">
-            <Header />
+            <Navbar />
 
             <Routes>
               <Route path="/" element={
                 <main>
                   <Hero />
                   <MaskSection />
+                  <ScrollSequence />
                   <ProductShowcase />
                   <ImmersiveTransition />
                   <ShopGrid />
                 </main>
               } />
               <Route path="/login" element={<Login />} />
+              <Route path="/product/ceremonial-matcha" element={<ProductPage />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
 
             <Footer />
           </div>
 
-          <style jsx="true">{`
-          .fixed-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 2rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            mix-blend-mode: difference;
-            color: white;
-            pointer-events: none;
-          }
 
-          .logo {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            pointer-events: auto;
-          }
-
-          .cart-btn {
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            pointer-events: auto;
-            mix-blend-mode: normal;
-          }
-
-          @media (max-width: 768px) {
-            .fixed-header {
-              padding: 1.5rem 2rem;
-            }
-          }
-        `}</style>
         </ReactLenis>
       </AuthProvider>
     </Router>

@@ -1,0 +1,387 @@
+/* ============================================================
+   About Us — "The Quiet Art of Stillness"
+   The Ceremonial Canvas Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Manrope:wght@300;400;500;600&display=swap');
+
+:root {
+    --surface: #f9faf8;
+    --surface-container: #edeeec;
+    --surface-container-low: #f3f4f2;
+    --surface-container-high: #e7e8e6;
+    --primary: #7f525d;
+    --primary-container: #ebb2bf;
+    --primary-fixed: #ffd9e0;
+    --on-surface: #191c1b;
+    --on-surface-variant: #504446;
+    --outline-variant: #d4c2c5;
+    --secondary: #596058;
+}
+
+/* ── Shell ── */
+.page {
+    min-height: 100vh;
+    background-color: var(--surface);
+    font-family: 'Manrope', sans-serif;
+    color: var(--on-surface);
+}
+
+/* ── Sticky Navbar ── */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(249, 250, 248, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(212, 194, 197, 0.12);
+}
+
+.navBrand {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--on-surface);
+}
+
+.navLinks { display: flex; gap: 2rem; }
+
+.navLink {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navLink:hover { color: var(--primary); }
+
+/* ── Hero ── */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    align-items: center;
+    overflow: hidden;
+}
+
+.heroText {
+    padding: 5rem 4rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0;
+}
+
+.heroTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.08;
+    color: var(--on-surface);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.heroSubtitle {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--on-surface-variant);
+    line-height: 1.85;
+    margin: 0;
+    max-width: 44ch;
+}
+
+.heroImageWrapper {
+    overflow: hidden;
+    height: 80vh;
+    min-height: 500px;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 12s ease;
+}
+
+.heroImageWrapper:hover .heroImage {
+    transform: scale(1.04);
+}
+
+/* ── Heritage Section ── */
+.heritageSection {
+    padding: 6rem 5rem;
+    background-color: var(--surface-container-low);
+}
+
+.heritageGrid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.heritageImageWrapper {
+    overflow: hidden;
+    border-radius: 16px;
+    height: 480px;
+}
+
+.heritageImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.heritageImageWrapper:hover .heritageImage {
+    transform: scale(1.04);
+}
+
+.heritageText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.sectionTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300;
+    color: var(--on-surface);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.bodyText {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--on-surface-variant);
+    line-height: 1.9;
+    margin: 0;
+}
+
+.pullQuote {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--primary);
+    border-left: 2px solid var(--primary-container);
+    padding: 0.5rem 1.25rem;
+    margin: 0.5rem 0 0 0;
+    line-height: 1.7;
+}
+
+/* ── Ritual Flow ── */
+.ritualSection {
+    padding: 6rem 5rem;
+    background-color: var(--surface);
+}
+
+.ritualTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-weight: 300;
+    color: var(--on-surface);
+    max-width: 1100px;
+    margin: 0 auto 3.5rem;
+    letter-spacing: -0.01em;
+}
+
+.ritualSteps {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.ritualStep {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 194, 197, 0.5);
+}
+
+.stepNum {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--primary-container);
+}
+
+.stepTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--primary);
+    margin: 0;
+}
+
+.stepBody {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--on-surface-variant);
+    line-height: 1.85;
+    margin: 0;
+}
+
+/* ── Sustainability ── */
+.sustainSection {
+    padding: 6rem 5rem;
+    background-color: var(--surface-container-low);
+}
+
+.sustainInner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.sustainText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.sustainTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--on-surface);
+    margin: 0;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.primaryBtn {
+    align-self: flex-start;
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+    color: var(--primary-fixed);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: opacity 0.25s ease, transform 0.2s ease;
+}
+
+.primaryBtn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.sustainImageWrapper {
+    overflow: hidden;
+    border-radius: 16px;
+    height: 440px;
+}
+
+.sustainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.sustainImageWrapper:hover .sustainImage {
+    transform: scale(1.04);
+}
+
+/* ── Footer ── */
+.footer {
+    background-color: var(--surface-container);
+    padding: 2rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footerBrand {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--on-surface);
+}
+
+.footerNav { display: flex; gap: 1.5rem; }
+
+.footerLink {
+    font-size: 0.72rem;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s ease;
+}
+
+.footerLink:hover { color: var(--primary); }
+
+.footerCopy {
+    font-size: 0.68rem;
+    color: var(--on-surface-variant);
+    margin: 0;
+    font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .navbar { padding: 1rem 1.5rem; }
+
+    .hero,
+    .heritageGrid,
+    .sustainInner {
+        grid-template-columns: 1fr;
+    }
+
+    .heroText { padding: 3rem 1.5rem; }
+    .heroImageWrapper { height: 50vh; }
+
+    .heritageSection,
+    .ritualSection,
+    .sustainSection { padding: 3.5rem 1.5rem; }
+
+    .ritualSteps { grid-template-columns: 1fr; gap: 2rem; }
+
+    .heritageImageWrapper,
+    .sustainImageWrapper { height: 300px; }
+}

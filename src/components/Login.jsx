@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Lock, LogIn, UserPlus } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import styles from './Login.module.css';
@@ -26,12 +25,12 @@ const Login = () => {
 
     useGSAP(() => {
         gsap.fromTo('.gsap-image',
-            { scale: 1.1, opacity: 0 },
-            { scale: 1, opacity: 1, duration: 1.8, ease: 'power3.out' }
+            { scale: 1.08, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 2.2, ease: 'power3.out' }
         );
         gsap.fromTo('.gsap-reveal',
-            { y: 30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: 'power3.out', delay: 0.3 }
+            { y: 24, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'power3.out', delay: 0.4 }
         );
     }, { scope: containerRef });
 
@@ -56,92 +55,101 @@ const Login = () => {
 
     return (
         <div className={styles.container} ref={containerRef}>
-            <div className={styles.imageSection}>
-                <div className={styles.imageWrapper}>
-                    <img
-                        src="/hero-sakura.png"
-                        alt="Premium Matcha"
-                        className={`gsap-image ${styles.image}`}
-                    />
-                    <div className={styles.overlay}>
-                        <h2 className={`gsap-reveal ${styles.quote}`}>
-                            "The purest pause in your day."
-                        </h2>
-                    </div>
+            {/* Left — editorial image panel */}
+            <div className={styles.imagePanel}>
+                <img
+                    src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?q=80&w=1200&auto=format&fit=crop"
+                    alt="Ceremonial matcha bowl"
+                    className={`gsap-image ${styles.heroImage}`}
+                />
+                <div className={styles.imageOverlay}>
+                    <p className={styles.eyebrow}>The Botanical Curator</p>
+                    <h1 className={`gsap-reveal ${styles.heroHeadline}`}>
+                        A Ritual<br />
+                        Defined by<br />
+                        Presence.
+                    </h1>
+                    <blockquote className={`gsap-reveal ${styles.quote}`}>
+                        "The way of tea is a way of life. It is the simple act of preparing a bowl of tea and drinking it with awareness."
+                    </blockquote>
                 </div>
             </div>
 
-            <div className={styles.formSection}>
-                <div className={styles.formWrapper}>
-                    <div className={styles.header}>
-                        <h1 className={`gsap-reveal ${styles.title}`}>
-                            {isLogin ? 'Welcome Back' : 'Join Our Journey'}
-                        </h1>
-                        <p className={`gsap-reveal ${styles.subtitle}`}>
+            {/* Right — form panel */}
+            <div className={styles.formPanel}>
+                <div className={styles.formInner}>
+                    <div className={`gsap-reveal ${styles.formHeader}`}>
+                        <h2 className={styles.formTitle}>
+                            {isLogin ? 'Welcome Back' : 'Create Account'}
+                        </h2>
+                        <p className={styles.formSubtitle}>
                             {isLogin
-                                ? 'Sign in to access your curated matcha selections.'
-                                : 'Create an account to discover premium ceremonial grades.'}
+                                ? 'Enter your sanctuary to continue the ritual.'
+                                : 'Begin your ceremonial journey.'}
                         </p>
                     </div>
 
-                    {error && <div className={`gsap-reveal ${styles.error}`}>{error}</div>}
+                    {error && <div className={`gsap-reveal ${styles.errorBox}`}>{error}</div>}
 
                     <form onSubmit={handleSubmit} className={styles.form}>
-                        <div className={`gsap-reveal ${styles.inputGroup}`}>
-                            <label htmlFor="email">Email address</label>
-                            <div className={styles.inputWrapper}>
-                                <Mail className={styles.icon} size={20} />
-                                <input
-                                    type="email"
-                                    id="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                    placeholder="Enter your email"
-                                    className={styles.input}
-                                />
-                            </div>
+                        <div className={`gsap-reveal ${styles.fieldGroup}`}>
+                            <label htmlFor="email" className={styles.label}>Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                                placeholder="your@email.com"
+                                className={styles.input}
+                            />
                         </div>
 
-                        <div className={`gsap-reveal ${styles.inputGroup}`}>
-                            <label htmlFor="password">Password</label>
-                            <div className={styles.inputWrapper}>
-                                <Lock className={styles.icon} size={20} />
-                                <input
-                                    type="password"
-                                    id="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                    placeholder="Enter your password"
-                                    className={styles.input}
-                                />
+                        <div className={`gsap-reveal ${styles.fieldGroup}`}>
+                            <div className={styles.passwordHeader}>
+                                <label htmlFor="password" className={styles.label}>Password</label>
+                                {isLogin && (
+                                    <button type="button" className={styles.forgotLink}>Forgotten?</button>
+                                )}
                             </div>
+                            <input
+                                type="password"
+                                id="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                                placeholder="••••••••"
+                                className={styles.input}
+                            />
                         </div>
 
                         <button
                             type="submit"
-                            className={`gsap-reveal ${styles.submitBtn}`}
+                            className={`gsap-reveal ${styles.primaryBtn}`}
                             disabled={isLoading}
                         >
-                            {isLogin ? (
-                                <><LogIn size={20} /> {isLoading ? 'Signing In...' : 'Sign In'}</>
-                            ) : (
-                                <><UserPlus size={20} /> {isLoading ? 'Creating...' : 'Create Account'}</>
-                            )}
+                            {isLoading ? 'Entering...' : isLogin ? 'Begin Ceremony' : 'Join the Ritual'}
                         </button>
                     </form>
 
-                    <p className={`gsap-reveal ${styles.toggleText}`}>
-                        {isLogin ? "Don't have an account? " : "Already have an account? "}
+                    <p className={`gsap-reveal ${styles.switchText}`}>
+                        {isLogin ? "New to the ceremony? " : "Already initiated? "}
                         <button
                             type="button"
-                            className={styles.toggleBtn}
+                            className={styles.switchLink}
                             onClick={() => setIsLogin(!isLogin)}
                         >
-                            {isLogin ? "Sign up" : "Sign in"}
+                            {isLogin ? 'Create Account' : 'Sign In'}
                         </button>
                     </p>
+
+                    <nav className={`gsap-reveal ${styles.footerNav}`}>
+                        <a href="#" className={styles.footerLink}>Wholesale</a>
+                        <span className={styles.footerDot} />
+                        <a href="#" className={styles.footerLink}>Sourcing</a>
+                        <span className={styles.footerDot} />
+                        <a href="#" className={styles.footerLink}>Support</a>
+                    </nav>
                 </div>
             </div>
         </div>

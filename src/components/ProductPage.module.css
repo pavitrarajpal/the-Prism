@@ -1,0 +1,402 @@
+/* ============================================================
+   Ceremonial Matcha Product Page — Botanical Design
+   The Ceremonial Canvas Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Manrope:wght@300;400;500;600&display=swap');
+
+:root {
+    --surface: #f9faf8;
+    --surface-container: #edeeec;
+    --surface-container-low: #f3f4f2;
+    --surface-container-high: #e7e8e6;
+    --primary: #7f525d;
+    --primary-container: #ebb2bf;
+    --primary-fixed: #ffd9e0;
+    --on-surface: #191c1b;
+    --on-surface-variant: #504446;
+    --outline-variant: #d4c2c5;
+    --secondary: #596058;
+}
+
+/* ── Shell ── */
+.page {
+    min-height: 100vh;
+    background-color: var(--surface);
+    font-family: 'Manrope', sans-serif;
+    color: var(--on-surface);
+}
+
+/* ── Sticky Navbar ── */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(249, 250, 248, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(212, 194, 197, 0.12);
+}
+
+.navBrand {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--on-surface);
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navLink:hover { color: var(--primary); }
+
+/* ── Hero ── */
+.hero {
+    position: relative;
+    height: 85vh;
+    min-height: 560px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.heroImageWrapper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.heroImage {
+    width: 100%;
+    height: 115%;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(4, 20, 10, 0.75) 0%,
+        rgba(4, 20, 10, 0.2) 55%,
+        transparent 100%
+    );
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 4rem 4rem 5rem;
+    max-width: 640px;
+}
+
+.heroEyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary-container);
+    margin: 0 0 1rem 0;
+}
+
+.heroTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.05;
+    color: var(--primary-container);
+    margin: 0 0 1.25rem 0;
+    letter-spacing: -0.01em;
+}
+
+.heroDesc {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.92rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255, 217, 224, 0.75);
+    margin: 0 0 2rem 0;
+    line-height: 1.7;
+    max-width: 38ch;
+}
+
+.heroCta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.heroPrice {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary-fixed);
+}
+
+.primaryBtn {
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+    color: var(--primary-fixed);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: opacity 0.25s ease, transform 0.2s ease;
+}
+
+.primaryBtn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+/* ── Details Section ── */
+.detailsSection {
+    padding: 5rem 5rem 5rem 5rem;
+    background-color: var(--surface-container-low);
+}
+
+.detailsGrid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 4rem;
+    align-items: start;
+}
+
+.descCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0;
+}
+
+.sectionTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300;
+    color: var(--on-surface);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.bodyText {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--on-surface-variant);
+    line-height: 1.85;
+    margin: 0;
+}
+
+.shippingNote {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--secondary);
+    margin-top: 0.5rem;
+    letter-spacing: 0.04em;
+}
+
+/* Spec card */
+.specCard {
+    background-color: var(--surface-container);
+    border-radius: 14px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.specRow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(212, 194, 197, 0.3);
+}
+
+.specRow:last-child { border-bottom: none; }
+
+.specLabel {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+}
+
+.specValue {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--on-surface);
+}
+
+/* ── Gallery ── */
+.gallerySection {
+    padding: 3rem 5rem;
+    background-color: var(--surface);
+}
+
+.galleryGrid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.25rem;
+    height: 480px;
+}
+
+.galleryMain,
+.galleryStack {
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.galleryStack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.galleryStack > * {
+    flex: 1;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.galleryImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.galleryMain:hover .galleryImg,
+.galleryStack > *:hover .galleryImg {
+    transform: scale(1.04);
+}
+
+/* ── Ritual Steps ── */
+.ritualSection {
+    padding: 5rem 5rem;
+    background-color: var(--surface-container-low);
+}
+
+.ritualTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-weight: 300;
+    color: var(--on-surface);
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    letter-spacing: -0.01em;
+}
+
+.ritualGrid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.ritualStep {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.ritualStepTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary);
+    margin: 0;
+}
+
+.ritualStepBody {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--on-surface-variant);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ── Footer ── */
+.footer {
+    background-color: var(--surface-container);
+    padding: 2rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footerBrand {
+    font-size: 0.7rem;
+    font-style: italic;
+    color: var(--on-surface-variant);
+}
+
+.footerNav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footerLink {
+    font-size: 0.72rem;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s ease;
+}
+
+.footerLink:hover { color: var(--primary); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .navbar { padding: 1rem 1.5rem; }
+    .heroContent { padding: 2.5rem 2rem; }
+    .detailsSection, .gallerySection, .ritualSection { padding: 3rem 1.5rem; }
+    .detailsGrid, .ritualGrid { grid-template-columns: 1fr; }
+    .galleryGrid { grid-template-columns: 1fr; height: auto; }
+    .galleryMain { height: 280px; }
+    .galleryStack { flex-direction: row; height: 200px; }
+}

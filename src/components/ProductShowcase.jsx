@@ -49,7 +49,7 @@ const ProductShowcase = () => {
             <div className={styles.card} ref={cardRef}>
                 <div className={styles.imageWrapper}>
                     <img
-                        src="https://images.unsplash.com/photo-1582787019842-8c116bb867ff?q=80&w=800&auto=format&fit=crop"
+                        src="/premium-sakura-latte.jpeg"
                         alt="Premium Sakura Latte"
                         className={styles.productImage}
                     />
@@ -57,7 +57,7 @@ const ProductShowcase = () => {
 
                 <div className={styles.details}>
                     <h3 className={styles.title}>Premium Sakura Latte</h3>
-                    <p className={styles.price}>$45.00</p>
+                    <p className={styles.price}>₹3,700.00</p>
 
                     <div className={styles.controls}>
                         <div className={styles.qtySelector}>

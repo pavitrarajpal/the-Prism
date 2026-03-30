@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root {
-  --color-sakura: #E5A4B4;
-  --color-matcha: #4A6352;
-  --color-matcha-light: #8CA293;
-  --color-cream: #F7F9F5;
-  --color-beige: #EBEFE9;
-  --color-brown: #334238;
-  --color-dark-brown: #1B261E;
-  --color-white: #FFFFFF;
-  --color-black: #111813;
+  /* The Botanical Curator Design Tokens */
+  --color-primary: #7f525d;
+  --color-primary-container: #ebb2bf;
+  --color-on-primary: #ffffff;
+  
+  --color-secondary: #596058;
+  --color-tertiary: #576157;
+  
+  --color-surface: #f9faf8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f4f2;
+  --color-surface-bright: #ffffff;
+  --color-surface-variant: #e1e3e1;
+  
+  --color-on-surface: #191c1b;
+  --color-outline-variant: #d4c2c5;
 
-  --font-serif: 'Playfair Display', serif;
+  --color-white: #ffffff;
+  --color-black: #000000; /* Used sparingly, mostly on-surface is preferred */
+
+  --font-serif: 'Noto Serif', serif;
   --font-sans: 'Inter', sans-serif;
 
   --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -28,8 +38,8 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: var(--color-cream);
-  color: var(--color-dark-brown);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -65,13 +75,13 @@ button {
 }
 
 ::-moz-selection {
-  background: var(--color-matcha);
-  color: var(--color-white);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 ::selection {
-  background: var(--color-matcha);
-  color: var(--color-white);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 /* Lenis Scroll Base */
