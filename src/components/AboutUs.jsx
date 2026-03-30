@@ -56,7 +56,7 @@ const AboutUs = () => {
         </div>
         <div className={`reveal-hero ${styles.heroImageWrapper}`}>
           <img
-            src="https://images.unsplash.com/photo-1599577963383-f61b17a151b7?q=80&w=900&auto=format&fit=crop"
+            src="/about-hero.png"
             alt="Matcha tea fields Uji Japan"
             className={styles.heroImage}
           />
@@ -68,7 +68,7 @@ const AboutUs = () => {
         <div className={styles.heritageGrid}>
           <div className={`scroll-reveal ${styles.heritageImageWrapper}`}>
             <img
-              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=900&auto=format&fit=crop"
+              src="/about-heritage.png"
               alt="Stone grinding matcha"
               className={styles.heritageImage}
             />
@@ -143,7 +143,7 @@ const AboutUs = () => {
           </div>
           <div className={`scroll-reveal ${styles.sustainImageWrapper}`}>
             <img
-              src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=800&auto=format&fit=crop"
+              src="/about-sustain.png"
               alt="Sustainable tea farming"
               className={styles.sustainImage}
             />

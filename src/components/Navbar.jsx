@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useCart } from '../contexts/CartContext';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { currentUser, logout } = useAuth();
+  const { cart } = useCart();
 
   const handleAuthAction = async () => {
     if (currentUser) {
@@ -25,7 +27,7 @@ const Navbar = () => {
       <div className={styles.logo} onClick={() => navigate('/')}>MATCHA.</div>
       
       <nav className={styles.navLinks}>
-        <Link to="/" className={styles.link}>Shop</Link>
+        <Link to="/shop" className={styles.link}>Shop</Link>
         <Link to="/about" className={styles.link}>About</Link>
         <Link to="/contact" className={styles.link}>Contact</Link>
       </nav>
@@ -34,7 +36,7 @@ const Navbar = () => {
         <button className={styles.authBtn} onClick={handleAuthAction}>
           {currentUser ? 'Logout' : 'Login'}
         </button>
-        <Link to="/cart" className={styles.cartBtn}>Cart (0)</Link>
+        <Link to="/cart" className={styles.cartBtn}>Cart ({cart.length})</Link>
       </div>
     </header>
   );

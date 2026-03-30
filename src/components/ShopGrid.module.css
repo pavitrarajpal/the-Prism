@@ -84,3 +84,25 @@
         grid-template-columns: 1fr;
     }
 }
+
+.addToCartBtn {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-top: 0.5rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #38423b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    display: block;
+}
+
+.addToCartBtn:hover {
+    opacity: 0.8;
+}

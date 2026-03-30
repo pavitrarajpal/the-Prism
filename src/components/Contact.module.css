@@ -1,60 +1,239 @@
-.pageContainer {
-    min-height: 100vh;
-    padding: 12rem 4rem 8rem;
-    background-color: var(--color-surface);
-    color: var(--color-on-surface);
+/* ============================================================
+   Contact Us — "Inquiry & Ritual"
+   The Ceremonial Canvas Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Manrope:wght@300;400;500;600&display=swap');
+
+:root {
+    --surface: #e9f0e0;
+    --surface-darker: #ddebce;
+    --surface-container: #edeeec;
+    --surface-container-low: #f3f4f2;
+    --primary: #7f525d;
+    --primary-container: #ebb2bf;
+    --primary-fixed: #ffd9e0;
+    --on-surface: #38423b;
+    --on-surface-variant: #566459;
+    --outline-variant: #bdd0c1;
+    --primary-text: #7f525d;
 }
 
-.contentWrapper {
+/* ── Shell ── */
+.pageContainer {
+    min-height: 100vh;
+    background-color: var(--surface);
+    font-family: 'Manrope', sans-serif;
+    color: var(--on-surface);
+}
+
+/* ── Sticky Navbar ── */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    gap: 8rem;
-    max-width: 1200px;
+    padding: 1.25rem 3rem;
+    background: rgba(233, 240, 224, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(138, 158, 143, 0.15);
+}
+
+.navBrand {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--on-surface);
+}
+
+.navLinks { display: flex; gap: 2rem; }
+
+.navLink {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navLink:hover { color: var(--primary-text); }
+
+/* ── Hero ── */
+.heroSection {
+    padding: 6rem 5rem 4rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-.textCol {
-    flex: 1;
+.heroLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.label {
-    font-family: var(--font-sans);
-    font-size: 0.875rem;
+.eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-secondary);
-    margin-bottom: 2rem;
+    color: var(--on-surface-variant);
+    margin: 0;
 }
 
 .title {
-    font-family: var(--font-serif);
-    font-size: clamp(3rem, 6vw, 5rem);
-    line-height: 1;
-    color: var(--color-primary);
-    margin-bottom: 2rem;
-    margin-left: -0.25rem;
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--primary-text);
+    margin: 0;
+    letter-spacing: -0.01em;
 }
 
-.bodyText {
-    font-family: var(--font-sans);
-    font-size: 1.125rem;
+.subtitle {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--on-surface-variant);
     line-height: 1.8;
-    color: var(--color-secondary);
-    max-width: 400px;
+    margin: 0;
+    max-width: 44ch;
 }
 
-.formCol {
-    flex: 1.2;
-    background-color: var(--color-surface-container-low);
-    padding: 4rem;
+.imageStack {
     position: relative;
-    margin-top: -4rem; /* Asymmetrical elevation */
+    width: 85%;
+    margin-left: auto;
+}
+
+.heroImage {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.quoteCard {
+    position: absolute;
+    bottom: -1rem;
+    left: -3rem;
+    background-color: var(--surface-darker);
+    padding: 1.25rem 2rem;
+    border-radius: 4px;
+    max-width: 260px;
+    box-shadow: 0 10px 40px rgba(46, 56, 49, 0.08);
+}
+
+.quoteCard p {
+    font-family: 'Noto Serif', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--on-surface);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── Studio & Form Grid ── */
+.contactGrid {
+    padding: 5rem 5rem;
+    background-color: var(--surface-darker);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.infoCol {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.infoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.infoTitle {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--on-surface);
+    margin: 0;
+}
+
+.infoText {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--on-surface-variant);
+    margin: 0;
+}
+
+.mapLink {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--on-surface);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.hoursRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--on-surface-variant);
+    border-bottom: 1px solid rgba(138, 158, 143, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.zenImageWrapper {
+    width: 200px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.zenImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+}
+
+/* ── Form ── */
+.formCol {
+    background-color: var(--surface);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(46, 56, 49, 0.05);
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1.5rem;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
 .inputGroup {
@@ -64,60 +243,129 @@
 }
 
 .inputLabel {
-    font-family: var(--font-sans);
-    font-size: 0.875rem; /* label-md equivalent */
-    color: var(--color-secondary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
 }
 
-.inputField, .inputArea {
+.inputField,
+.inputArea {
     width: 100%;
-    background: transparent;
+    background-color: transparent;
     border: none;
-    /* minimalist, only a bottom border using outline-variant at 20% opacity */
-    /* using rgba variant of outline-variant (#d4c2c5) */
-    border-bottom: 1px solid rgba(212, 194, 197, 0.5); 
-    padding: 0.5rem 0;
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    color: var(--color-on-surface);
-    transition: var(--transition-smooth);
-}
-
-.inputField:focus, .inputArea:focus {
-    outline: none;
-    border-bottom: 1px solid var(--color-primary);
+    border-bottom: 1px solid rgba(138, 158, 143, 0.3);
+    padding: 0.75rem 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    color: var(--on-surface);
+    transition: border-color 0.3s ease;
 }
 
 .inputArea {
     resize: none;
+    background-color: rgba(255,255,255, 0.2);
+    border: 1px solid rgba(138, 158, 143, 0.2);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
 }
 
-.primaryButton {
+.inputField:focus,
+.inputArea:focus {
+    outline: none;
+    border-bottom-color: var(--primary-text);
+}
+
+.inputField::placeholder,
+.inputArea::placeholder {
+    color: rgba(86, 100, 89, 0.4);
+}
+
+.primaryBtn {
     align-self: flex-start;
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    padding: 1rem 3rem;
-    border-radius: 0;
-    font-family: var(--font-sans);
-    font-size: 0.875rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: var(--primary-text);
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: var(--transition-smooth);
-    margin-top: 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.primaryButton:hover {
-    background-color: var(--color-tertiary);
+.primaryBtn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
 }
 
-@media (max-width: 1024px) {
-    .contentWrapper {
-        flex-direction: column;
-        gap: 4rem;
+/* ── Closing Section ── */
+.closingSection {
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    background-color: var(--surface);
+}
+
+.closingLeaf {
+    color: var(--primary-text);
+    font-size: 1.5rem;
+}
+
+.closingQuote {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--primary-text);
+    margin: 0;
+    line-height: 1.25;
+}
+
+.closingAuthor {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--on-surface-variant);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .navbar { padding: 1rem 1.5rem; }
+    
+    .heroSection, .contactGrid {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
     }
     
+    .imageStack {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .quoteCard {
+        left: 1rem;
+        bottom: -2rem;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
     .formCol {
-        margin-top: 0;
-        padding: 2rem;
+        padding: 2rem 1.5rem;
     }
 }

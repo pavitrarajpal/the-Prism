@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
                 <div className={styles.links}>
                     <div className={styles.linkGroup}>
                         <h4 className={styles.linkTitle}>Shop</h4>
-                        <a className={styles.link}>All Products</a>
+                        <Link to="/shop" className={styles.link}>All Products</Link>
                         <a className={styles.link}>Premium Sakura Latte</a>
                         <a className={styles.link}>Accessories</a>
                     </div>

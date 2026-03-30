@@ -6,9 +6,9 @@ import styles from './ScrollSequence.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const frameCount = 300;
+const frameCount = 233;
 const currentFrame = index => (
-    `/sequence/frame_${index.toString().padStart(3, '0')}_delay-0.033s.jpg`
+    `/art-sequence/frame_${index.toString().padStart(3, '0')}_delay-0.033s.jpg`
 );
 
 const ScrollSequence = () => {

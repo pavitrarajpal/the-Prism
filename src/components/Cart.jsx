@@ -3,18 +3,11 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import styles from './Cart.module.css';
 
-const cartItems = [
-    {
-        id: 1,
-        name: 'Ceremonial Grade Matcha',
-        meta: 'Origin: Uji, Japan · 30g Tin',
-        price: '₹3,700.00',
-        image: '/hero-matcha.png',
-    },
-];
+import { useCart } from '../contexts/CartContext';
 
 const Cart = () => {
     const containerRef = useRef(null);
+    const { cart, updateQuantity, removeFromCart, cartTotal, addToCart } = useCart();
 
     useGSAP(() => {
         gsap.from('.reveal-item', {
@@ -49,26 +42,31 @@ const Cart = () => {
                 <div className={styles.layout}>
                     {/* ── Cart Items ── */}
                     <div className={styles.cartList}>
-                        {cartItems.map(item => (
-                            <div key={item.id} className={`reveal-item ${styles.cartItem}`}>
-                                <div className={styles.itemImageWrapper}>
-                                    <img src={item.image} alt={item.name} className={styles.itemImage} />
-                                </div>
-                                <div className={styles.itemInfo}>
-                                    <h3 className={styles.itemName}>{item.name}</h3>
-                                    <p className={styles.itemMeta}>{item.meta}</p>
-                                </div>
-                                <div className={styles.itemControls}>
-                                    <div className={styles.qtyRow}>
-                                        <button className={styles.qtyBtn}>−</button>
-                                        <span className={styles.qtyValue}>1</span>
-                                        <button className={styles.qtyBtn}>+</button>
+                        {cart.length === 0 ? (
+                            <div className={`reveal-item ${styles.emptyCart}`}>Your ritual awaits its vessels. Your cart is empty.</div>
+                        ) : (
+                            cart.map(item => (
+                                <div key={item.id} className={`reveal-item ${styles.cartItem}`}>
+                                    <div className={styles.itemImageWrapper}>
+                                        <img src={item.image} alt={item.name} className={styles.itemImage} />
                                     </div>
-                                    <span className={styles.removeBtn}>Remove</span>
+                                    <div className={styles.itemInfo}>
+                                        <h3 className={styles.itemName}>{item.name}</h3>
+                                        {/* If meta doesn't exist on standard products, no big deal */}
+                                        <p className={styles.itemMeta}>{item.meta || 'Ceremonial Canvas'}</p>
+                                    </div>
+                                    <div className={styles.itemControls}>
+                                        <div className={styles.qtyRow}>
+                                            <button className={styles.qtyBtn} onClick={() => updateQuantity(item.id, -1)}>−</button>
+                                            <span className={styles.qtyValue}>{item.quantity}</span>
+                                            <button className={styles.qtyBtn} onClick={() => updateQuantity(item.id, 1)}>+</button>
+                                        </div>
+                                        <span className={styles.removeBtn} onClick={() => removeFromCart(item.id)}>Remove</span>
+                                    </div>
+                                    <div className={styles.itemPrice}>{item.price}</div>
                                 </div>
-                                <div className={styles.itemPrice}>{item.price}</div>
-                            </div>
-                        ))}
+                            ))
+                        )}
 
                         {/* Editorial pull‑quote */}
                         <blockquote className={`reveal-item ${styles.pullQuote}`}>
@@ -83,7 +81,7 @@ const Cart = () => {
                         <div className={styles.summaryRows}>
                             <div className={styles.summaryRow}>
                                 <span>Subtotal</span>
-                                <span>₹3,700.00</span>
+                                <span>₹{cartTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                             </div>
                             <div className={styles.summaryRow}>
                                 <span>Shipping</span>
@@ -97,7 +95,7 @@ const Cart = () => {
 
                         <div className={styles.summaryTotal}>
                             <span>Total</span>
-                            <span>₹3,700.00</span>
+                            <span>₹{cartTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                         </div>
 
                         <button className={styles.checkoutBtn}>Proceed to Ritual</button>
@@ -124,7 +122,10 @@ const Cart = () => {
                                 />
                                 <div>
                                     <p className={styles.upsellName}>Fine Mesh Sifter</p>
-                                    <button className={styles.upsellBtn}>+ Add to Cart</button>
+                                    <button 
+                                        className={styles.upsellBtn}
+                                        onClick={() => addToCart({ id: 6, name: 'Fine Mesh Sifter', price: '₹900.00', image: '/mesh-sifter.png' })}
+                                    >+ Add to Cart</button>
                                 </div>
                             </div>
                         </div>

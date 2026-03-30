@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const Hero = () => {
     const containerRef = useRef(null);
     const headlineRef = useRef(null);
-    const productRef = useRef(null);
     const bgRef = useRef(null);
     const canvasRef = useRef(null);
 
@@ -23,11 +22,7 @@ const Hero = () => {
             duration: 1.5,
             ease: 'power4.out',
             delay: 0.2
-        }).fromTo(productRef.current,
-            { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' },
-            '-=1.2'
-        );
+        });
 
         // Scroll animation setup
         const canvas = canvasRef.current;
@@ -105,13 +100,6 @@ const Hero = () => {
                 clipPath: 'circle(150% at 50% 50%)',
                 ease: 'none',
             }, 0)
-            // Fade and scale product
-            .to(productRef.current, {
-                scale: 0.8,
-                opacity: 0,
-                y: -100,
-                ease: 'none'
-            }, 0)
             // Animate headline upwards and fade out
             .to('.' + styles.textContent, {
                 y: -150,
@@ -130,14 +118,6 @@ const Hero = () => {
             </div>
 
             <div className={styles.heroContent}>
-                <div className={styles.productWrapper} ref={productRef}>
-                    <img
-                        src="/premium-sakura-latte.jpeg"
-                        alt="Premium Sakura Latte"
-                        className={styles.productImage}
-                    />
-                </div>
-
                 <div className={styles.textContent}>
                     <h1 className={styles.headline}>
                         <span className={styles.headlineLine} ref={headlineRef}>

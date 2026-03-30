@@ -18,6 +18,7 @@ import Contact from './components/Contact';
 import Cart from './components/Cart';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { CartProvider } from './contexts/CartContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,33 +37,33 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <ReactLenis root>
-          <div className="app-container">
-            <Navbar />
+        <CartProvider>
+          <ReactLenis root>
+            <div className="app-container">
+              <Navbar />
 
-            <Routes>
-              <Route path="/" element={
-                <main>
-                  <Hero />
-                  <MaskSection />
-                  <ScrollSequence />
-                  <ProductShowcase />
-                  <ImmersiveTransition />
-                  <ShopGrid />
-                </main>
-              } />
-              <Route path="/login" element={<Login />} />
-              <Route path="/product/ceremonial-matcha" element={<ProductPage />} />
-              <Route path="/about" element={<AboutUs />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
+              <Routes>
+                <Route path="/" element={
+                  <main>
+                    <Hero />
+                    <MaskSection />
+                    <ScrollSequence />
+                    <ProductShowcase />
+                    <ImmersiveTransition />
+                  </main>
+                } />
+                <Route path="/shop" element={<main><ShopGrid /></main>} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/product/ceremonial-matcha" element={<ProductPage />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
 
-            <Footer />
-          </div>
-
-
-        </ReactLenis>
+              <Footer />
+            </div>
+          </ReactLenis>
+        </CartProvider>
       </AuthProvider>
     </Router>
   );
