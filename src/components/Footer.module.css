@@ -15,11 +15,22 @@
     flex: 1;
 }
 
-.footerLogoImage {
-    height: 120px;
-    width: auto;
-    object-fit: contain;
+.footerLogoWrapper {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 1.5rem;
+}
+
+.footerLogoImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.35);
 }
 
 .mission {
