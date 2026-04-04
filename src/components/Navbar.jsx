@@ -24,7 +24,9 @@ const Navbar = () => {
 
   return (
     <header className={styles.navbar}>
-      <div className={styles.logo} onClick={() => navigate('/')}>MATCHA.</div>
+      <div className={styles.logoWrapper} onClick={() => navigate('/')}>
+        <img src="/logo.jpg" alt="Sakura Matcha Logo" className={styles.logoImage} />
+      </div>
       
       <nav className={styles.navLinks}>
         <Link to="/shop" className={styles.link}>Shop</Link>

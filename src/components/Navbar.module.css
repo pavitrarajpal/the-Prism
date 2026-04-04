@@ -14,13 +14,16 @@
   border-bottom: 1px solid rgba(212, 194, 197, 0.15); /* ghost border fallback */
 }
 
-.logo {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: var(--color-primary);
+.logoWrapper {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navLinks {

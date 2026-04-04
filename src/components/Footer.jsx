@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.topSection}>
                 <div className={styles.brand}>
-                    <h2 className={styles.logo}>SAKURA.</h2>
+                    <img src="/logo.jpg" alt="Sakura Matcha Logo" className={styles.footerLogoImage} />
                     <p className={styles.mission}>
                         Sourced ethically from Japan.<br />
                         Bringing mindfulness to your daily ritual.
